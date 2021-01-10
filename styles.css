@@ -1,0 +1,217 @@
+@import url('https://fonts.google.com/specimen/Raleway');
+
+:root {
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+}
+
+body {
+    /* max-height: 100%; */
+    max-width: 1440px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(60deg,var(--dark-blue), var(--very-dark-blue))
+}
+
+.container {
+    display: flex;
+    margin-top: 200px;
+    height: 160px;
+
+}
+
+#left-container {
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    padding: 2.5rem;
+    border-radius: 8px 80px 8px 8px;
+    width: 300px;
+    justify-content: center;
+    /* align-items: space-between; */
+    align-content: space-between;
+}
+
+#logo {
+    margin-bottom: 14px;
+    width: 100px;
+}
+
+#icons {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.icons-svg {
+    background-color: var(--very-dark-blue);
+    padding: 0.5rem;
+    border-radius: 8px;
+    /* align-items: center; */
+}
+.icons-svg:nth-child(n+2) {
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+#right-container {
+    background-color:var(--dark-blue);
+    padding: 2.5rem;
+    width: 500px;
+    height: 80%;
+    align-self: flex-end;
+    border-radius: 8px 8px 8px 8px;
+    position: relative;
+}
+#right-container p {
+    color: var(--grayish-blue);
+    
+}
+#right-container > p {
+    font-size: 14px;
+}
+
+.attribution {
+    position: absolute;
+    top: 500px;
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border: 2px solid var(--very-dark-blue);
+
+    width: 90%;
+    height: 13px;
+    border-radius: 90px 90px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+progress[value]::-webkit-progress-bar {
+    border-radius: 90px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    background-color:var(--very-dark-blue);
+}
+progress[value]::-webkit-progress-value {
+    background-image:
+         -webkit-linear-gradient(top, 
+                                 rgba(255, 255, 255, .25), 
+                                 rgba(0, 0, 0, .25)),
+         -webkit-linear-gradient(left, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  
+      border-radius: 90px; 
+      /* background-size: 35px 20px, 100% 100%, 100% 100%; */
+}
+
+.bubble {
+    position: absolute;
+    width: 120px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    top: -40px;
+    left: 350px;
+
+}
+.bubble-bottom-right:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 24px solid #fff;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #fff;
+    border-bottom: 20px solid transparent;
+    right: 5px;
+    bottom: -25px;
+}
+#bubble-span {
+    font-weight: bold;
+    font-size: 25px;
+    color: var(--very-dark-blue);
+}
+.bubble p {
+    font-size: 10px;
+}
+
+.progress-span {
+    font-weight: bold;
+    color: var(--grayish-blue);
+    font-size: 12px;
+}
+
+.progress-span:nth-child(2) {
+    margin-left: 325px;
+}
+
+/* mobile responsive design */
+@media(max-width: 400px) {
+    
+}
+
+@media (max-width: 500px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        /* flex-direction: column; */
+        /* max-width: 375px; */
+    }
+    .container {
+        max-width: 375px;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        margin-left: 50px;
+        margin-top: 200px;
+    }
+    #left-container {
+        width: 90%;
+        position: relative;
+        /* margin: auto; */
+        /* margin-left: 35px; */
+    }
+    #right-container {
+        width: 90%;
+        position: relative;
+        margin-top: 12px;
+        margin-right: 35px;
+        padding: 1.5rem;
+        padding-bottom: 2.5rem;
+    }
+    .bubble {
+        left: 100px;
+        top: 90px;
+    }
+    .bubble-bottom-right:before {
+        display: none;
+    }
+
+    .progress-span:nth-child(2) {
+        margin-left: 185px;
+    }
+
+    .attribution {
+        left: 50px;
+    }
+
+    progress[value] {
+        margin-bottom: 0;
+    }
+}
